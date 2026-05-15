@@ -46,16 +46,16 @@ export const CourseSheet = ({
                     {pick(step.title, lang)}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {pick(step.desc, lang)}
-
-                    {step.image && (
-                      <img
-                       src={step.image}
-                        alt={pick(step.title, lang)}
-                       className="w-full rounded-2xl mt-4 shadow-lg"
-                       />
-                  )}
+  {pick(step.desc, lang)}
 </p>
+
+{step.image && (
+  <img
+    src={step.image}
+    alt={pick(step.title, lang)}
+    className="w-full rounded-2xl mt-4 shadow-lg"
+  />
+)}
                   {/* Illustrative phone screenshot frame */}
                   <div className="mt-3 relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-gradient-soft">
                     <div className="absolute inset-3 rounded-lg bg-card shadow-inner flex flex-col">
