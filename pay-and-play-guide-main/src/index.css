@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Warm Saffron palette */
+    --background: 36 100% 97%;
+    --foreground: 18 42% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 18 42% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 18 42% 17%;
+
+    --primary: 14 78% 56%;            /* saffron orange #e85d3a */
+    --primary-foreground: 36 100% 97%;
+    --primary-glow: 28 100% 70%;
+
+    --secondary: 32 100% 82%;         /* soft peach */
+    --secondary-foreground: 18 42% 17%;
+
+    --muted: 34 60% 92%;
+    --muted-foreground: 18 25% 38%;
+
+    --accent: 18 42% 28%;             /* deep cocoa */
+    --accent-foreground: 36 100% 97%;
+
+    --destructive: 0 78% 52%;
+    --destructive-foreground: 36 100% 97%;
+
+    --border: 30 50% 86%;
+    --input: 30 50% 90%;
+    --ring: 14 78% 56%;
+
+    --radius: 1.25rem;
+
+    /* Custom tokens */
+    --gradient-warm: linear-gradient(135deg, hsl(28 100% 70%), hsl(14 78% 56%));
+    --gradient-sunset: linear-gradient(135deg, hsl(36 100% 88%) 0%, hsl(28 100% 78%) 50%, hsl(14 78% 60%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(36 100% 97%) 0%, hsl(34 100% 93%) 100%);
+    --gradient-cocoa: linear-gradient(135deg, hsl(18 42% 28%), hsl(18 42% 17%));
+
+    --shadow-warm: 0 18px 50px -20px hsl(14 78% 56% / 0.45);
+    --shadow-soft: 0 8px 24px -12px hsl(18 42% 17% / 0.18);
+    --shadow-pop: 0 30px 60px -25px hsl(14 78% 40% / 0.55);
+
+    --sidebar-background: 36 100% 97%;
+    --sidebar-foreground: 18 42% 17%;
+    --sidebar-primary: 14 78% 56%;
+    --sidebar-primary-foreground: 36 100% 97%;
+    --sidebar-accent: 34 60% 92%;
+    --sidebar-accent-foreground: 18 42% 17%;
+    --sidebar-border: 30 50% 86%;
+    --sidebar-ring: 14 78% 56%;
+  }
+
+  .dark {
+    --background: 18 35% 8%;
+    --foreground: 36 100% 95%;
+    --card: 18 35% 11%;
+    --card-foreground: 36 100% 95%;
+    --popover: 18 35% 11%;
+    --popover-foreground: 36 100% 95%;
+    --primary: 14 85% 60%;
+    --primary-foreground: 36 100% 97%;
+    --primary-glow: 28 100% 70%;
+    --secondary: 18 30% 18%;
+    --secondary-foreground: 36 100% 95%;
+    --muted: 18 30% 16%;
+    --muted-foreground: 30 20% 70%;
+    --accent: 28 100% 70%;
+    --accent-foreground: 18 42% 12%;
+    --destructive: 0 78% 52%;
+    --destructive-foreground: 36 100% 97%;
+    --border: 18 30% 20%;
+    --input: 18 30% 20%;
+    --ring: 14 85% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1, h2, h3, h4, h5 { @apply font-display tracking-tight; }
+}
+
+@layer utilities {
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
+  .bg-gradient-sunset { background-image: var(--gradient-sunset); }
+  .bg-gradient-soft { background-image: var(--gradient-soft); }
+  .bg-gradient-cocoa { background-image: var(--gradient-cocoa); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-pop { box-shadow: var(--shadow-pop); }
+  .text-balance { text-wrap: balance; }
+
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(hsl(18 42% 17% / 0.06) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.7s ease-out both; }
