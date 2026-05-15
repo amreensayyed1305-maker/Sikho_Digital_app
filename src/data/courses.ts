@@ -24,7 +24,6 @@ const s = (en: string, hi?: string, hinglish?: string) => ({ en, hi, hinglish })
 export const courses: Course[] = [
   {
     id: "phonepe",
-    
     size: "lg",
     tone: "saffron",
     title: s("Send money on PhonePe", "PhonePe से पैसे भेजें", "PhonePe se paise bhejein"),
@@ -58,7 +57,6 @@ export const courses: Course[] = [
   },
   {
     id: "gpay",
-    emoji: "📱",
     size: "md",
     tone: "peach",
     title: s("Pay with Google Pay", "Google Pay से भुगतान", "Google Pay se payment"),
@@ -73,7 +71,7 @@ export const courses: Course[] = [
   },
   {
     id: "train",
-    emoji: "🚆",
+    
     size: "md",
     tone: "cocoa",
     title: s("Book a train ticket (IRCTC)", "ट्रेन टिकट बुक करें (IRCTC)", "Train ticket book karein (IRCTC)"),
@@ -89,7 +87,7 @@ export const courses: Course[] = [
   },
   {
     id: "bus",
-    emoji: "🚌",
+    
     size: "sm",
     tone: "cream",
     title: s("Book a bus on RedBus", "RedBus से बस बुक करें", "RedBus se bus book karein"),
@@ -104,7 +102,7 @@ export const courses: Course[] = [
   },
   {
     id: "flight",
-    emoji: "✈️",
+   
     size: "md",
     tone: "saffron",
     title: s("Book a flight", "फ्लाइट बुक करें", "Flight book karein"),
@@ -119,7 +117,7 @@ export const courses: Course[] = [
   },
   {
     id: "hotel",
-    emoji: "🏨",
+    
     size: "sm",
     tone: "peach",
     title: s("Book a hotel", "होटल बुक करें", "Hotel book karein"),
@@ -133,7 +131,7 @@ export const courses: Course[] = [
   },
   {
     id: "movie",
-    emoji: "🎬",
+   
     size: "sm",
     tone: "cocoa",
     title: s("Book movie tickets", "मूवी टिकट बुक करें", "Movie tickets book karein"),
@@ -147,7 +145,7 @@ export const courses: Course[] = [
   },
   {
     id: "whatsapp",
-    emoji: "💬",
+    
     size: "sm",
     tone: "cream",
     title: s("Send a WhatsApp voice note", "WhatsApp वॉइस नोट भेजें", "WhatsApp voice note bhejein"),
@@ -160,7 +158,7 @@ export const courses: Course[] = [
   },
   {
     id: "safety",
-    emoji: "🛡️",
+    
     size: "md",
     tone: "saffron",
     title: s("Stay safe online", "ऑनलाइन सुरक्षित रहें", "Online safe rahein"),

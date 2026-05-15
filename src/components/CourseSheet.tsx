@@ -50,12 +50,12 @@ export const CourseSheet = ({
 
                     {step.image && (
                       <img
-                        src={step.image}
+                       src={step.image}
                         alt={pick(step.title, lang)}
-                        className="w-full rounded-2xl mt-4 shadow-lg"
-                      />
-            )}
-                  </p>
+                       className="w-full rounded-2xl mt-4 shadow-lg"
+                       />
+                  )}
+</p>
                   {/* Illustrative phone screenshot frame */}
                   <div className="mt-3 relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-gradient-soft">
                     <div className="absolute inset-3 rounded-lg bg-card shadow-inner flex flex-col">
