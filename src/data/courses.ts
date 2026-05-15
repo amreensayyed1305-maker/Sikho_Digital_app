@@ -2,12 +2,21 @@ import type { Lang } from "@/contexts/LanguageContext";
 
 export type Course = {
   id: string;
-  emoji: string;
+  emoji?: string;
   size: "sm" | "md" | "lg" | "xl";
   tone: "saffron" | "peach" | "cocoa" | "cream";
+
   title: Partial<Record<Lang, string>> & { en: string };
+
   blurb: Partial<Record<Lang, string>> & { en: string };
-  steps: { title: Partial<Record<Lang, string>> & { en: string }; desc: Partial<Record<Lang, string>> & { en: string } }[];
+
+  steps: {
+    title: Partial<Record<Lang, string>> & { en: string };
+
+    desc: Partial<Record<Lang, string>> & { en: string };
+
+    image?: string;
+  }[];
 };
 
 const s = (en: string, hi?: string, hinglish?: string) => ({ en, hi, hinglish });
@@ -15,18 +24,36 @@ const s = (en: string, hi?: string, hinglish?: string) => ({ en, hi, hinglish })
 export const courses: Course[] = [
   {
     id: "phonepe",
-    emoji: "💸",
+    
     size: "lg",
     tone: "saffron",
     title: s("Send money on PhonePe", "PhonePe से पैसे भेजें", "PhonePe se paise bhejein"),
     blurb: s("Pay anyone using a phone number or UPI ID.", "फ़ोन नंबर या UPI ID से किसी को भी पैसे भेजें।", "Phone number ya UPI ID se kisi ko bhi paise bhejein."),
     steps: [
-      { title: s("Open PhonePe", "PhonePe खोलें", "PhonePe kholein"), desc: s("Tap the purple PhonePe icon on your home screen.", "होम स्क्रीन पर बैंगनी PhonePe आइकन पर टैप करें।", "Home screen pe purple PhonePe icon tap karein.") },
-      { title: s("Tap 'To Mobile or Contact'", "'मोबाइल पर भेजें' पर टैप करें", "'To Mobile' pe tap karein"), desc: s("On the home page, choose how you want to pay.", "होम पेज पर भुगतान का तरीका चुनें।", "Home page pe payment ka tarika choose karein.") },
-      { title: s("Pick the contact", "संपर्क चुनें", "Contact choose karein"), desc: s("Search by name or type the phone number.", "नाम से खोजें या फ़ोन नंबर टाइप करें।", "Naam se search karein ya number type karein.") },
-      { title: s("Enter amount", "राशि डालें", "Amount daalein"), desc: s("Type the amount in rupees and tap Pay.", "रुपयों में राशि डालें और Pay दबाएँ।", "Rupees me amount daalein aur Pay dabayein.") },
-      { title: s("Enter UPI PIN", "UPI पिन डालें", "UPI PIN daalein"), desc: s("Enter your 4 or 6 digit UPI PIN to confirm.", "पुष्टि के लिए अपना UPI पिन डालें।", "Confirm karne ke liye apna UPI PIN daalein.") },
-      { title: s("Done — show the green tick", "हो गया — हरा टिक दिखेगा", "Done — green tick dikhega"), desc: s("Take a screenshot to keep as receipt.", "रसीद रखने के लिए स्क्रीनशॉट लें।", "Receipt rakhne ke liye screenshot lein.") },
+      { title: s("Open PhonePe", "PhonePe खोलें", "PhonePe kholein"), 
+        desc: s("Tap the purple PhonePe icon on your home screen.", "होम स्क्रीन पर बैंगनी PhonePe आइकन पर टैप करें।", "Home screen pe purple PhonePe icon tap karein."),
+        image: "/phonepe 01.png",
+      },
+      { title: s("Tap 'To Mobile or Contact'", "'मोबाइल पर भेजें' पर टैप करें", "'To Mobile' pe tap karein"), 
+        desc: s("On the home page, choose how you want to pay.", "होम पेज पर भुगतान का तरीका चुनें।", "Home page pe payment ka tarika choose karein."),
+        image: "/phonepe 02.png",
+      },
+      { title: s("Pick the contact", "संपर्क चुनें", "Contact choose karein"), 
+        desc: s("Search by name or type the phone number.", "नाम से खोजें या फ़ोन नंबर टाइप करें।", "Naam se search karein ya number type karein."),
+        image: "/phonepe 03.png",
+      },
+      { title: s("Enter amount", "राशि डालें", "Amount daalein"),
+         desc: s("Type the amount in rupees and tap Pay.", "रुपयों में राशि डालें और Pay दबाएँ।", "Rupees me amount daalein aur Pay dabayein."),
+         image: "/phonepe 04.png",
+      },
+      { title: s("Enter UPI PIN", "UPI पिन डालें", "UPI PIN daalein"),
+         desc: s("Enter your 4 or 6 digit UPI PIN to confirm.", "पुष्टि के लिए अपना UPI पिन डालें।", "Confirm karne ke liye apna UPI PIN daalein."),
+         image: "/phonepe 05.png",
+      },
+      { title: s("Done — show the green tick", "हो गया — हरा टिक दिखेगा", "Done — green tick dikhega"),
+         desc: s("Take a screenshot to keep as receipt.", "रसीद रखने के लिए स्क्रीनशॉट लें।", "Receipt rakhne ke liye screenshot lein."),
+         image: "/phonepe 06.png",
+      },
     ],
   },
   {

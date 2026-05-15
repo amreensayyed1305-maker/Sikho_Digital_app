@@ -47,6 +47,14 @@ export const CourseSheet = ({
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {pick(step.desc, lang)}
+
+                    {step.image && (
+                      <img
+                        src={step.image}
+                        alt={pick(step.title, lang)}
+                        className="w-full rounded-2xl mt-4 shadow-lg"
+                      />
+            )}
                   </p>
                   {/* Illustrative phone screenshot frame */}
                   <div className="mt-3 relative aspect-[4/3] overflow-hidden rounded-xl border border-border/60 bg-gradient-soft">
