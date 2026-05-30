@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import { tr, useLang } from "@/contexts/LanguageContext";
-import heroImg from "@/assets/hero-learning.jpg";
+import heroImg from "@/assets/women-learning.jpg";
 
 export const Hero = () => {
   const { lang } = useLang();
